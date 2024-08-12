@@ -50,15 +50,18 @@ button:hover {
 
 .message {
     position: fixed; /* Fixes the position relative to the viewport */
-    top: 300px; /* Adjust as needed */
+    top: 250px; /* Adjust to bring the message closer to the button */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
     color: white;
     font-family: Arial, sans-serif;
     font-size: 18px;
     text-align: center;
-    letter-spacing: 10px; /* Adjust the spacing between letters */
+    letter-spacing: 2px; /* Adjust the spacing between letters */
+    margin-bottom: 10px; /* Space below the message */
+    z-index: 2; /* Ensure it's above other elements */
 }
+
 .click-box {
     background-color: white;
     padding: 30px;
@@ -66,10 +69,9 @@ button:hover {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    z-index: 2;
-    margin-top: 150px; /* Push the button down */
-    box-shadow: 0 0 50px rgba(255, 165, 69, 0.5);
-
+    z-index: 3; /* Ensure it's above the message */
+    margin-top: 10px; /* Reduce the space above the button */
+    box-shadow: 0 0 30px rgba(255, 149, 68, 0.5); /* Shadow effect */
 }
 
 .click-box:active {
@@ -128,5 +130,11 @@ button:hover {
 
     #video-container {
         width: 80%; /* Adjust for smaller screens */
+    }
+
+    .message {
+        top: 150px; /* Adjust for smaller screens */
+        font-size: 16px; /* Adjust font size */
+        letter-spacing: 1px; /* Adjust letter spacing */
     }
 }

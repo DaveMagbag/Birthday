@@ -20,7 +20,8 @@ function createConfetti() {
 setInterval(createConfetti, 300);
 
 function showVideo() {
-    document.querySelector('.click-box').style.display = 'none';
-    videoContainer.style.display = 'block';
+    document.querySelector('.click-box').style.display = 'none'; // Hide the button
+    document.getElementById('video-container').style.display = 'block'; // Show the video
+    document.querySelector('.message').style.display = 'none'; // Hide the message
 }
 
