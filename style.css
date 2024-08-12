@@ -50,7 +50,7 @@ button:hover {
 
 .message {
     position: fixed; /* Fixes the position relative to the viewport */
-    top: 250px; /* Adjust to bring the message closer to the button */
+    top: 200px; /* Adjust to bring the message closer to the button */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
     color: white;
@@ -119,9 +119,15 @@ button:hover {
 
 /* Responsive Design for Mobile Devices */
 @media (max-width: 600px) {
+    .message {
+        top: 150px; /* Adjust for smaller screens */
+        font-size: 16px; /* Adjust font size */
+        letter-spacing: 1px; /* Adjust letter spacing */
+    }
+
     .click-box {
         padding: 15px;
-        margin-top: 10px; /* Adjust margin for smaller screens */
+        margin-top: 5px; /* Adjust margin for smaller screens */
     }
 
     .click-box h1 {
@@ -130,11 +136,5 @@ button:hover {
 
     #video-container {
         width: 80%; /* Adjust for smaller screens */
-    }
-
-    .message {
-        top: 150px; /* Adjust for smaller screens */
-        font-size: 16px; /* Adjust font size */
-        letter-spacing: 1px; /* Adjust letter spacing */
     }
 }
