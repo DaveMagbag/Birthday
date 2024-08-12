@@ -1,65 +1,23 @@
 body {
-    margin: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column; /* Stack elements vertically */
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh;
+    margin: 0;
     background-color: black;
-    overflow: hidden;
-    position: relative;
-}
-
-#video-container {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 25%; /* Adjust as needed */
-    max-width: 800px; /* Optional */
-    height: auto;
-    z-index: 1;
-}
-
-video {
-    width: 100%; /* Fill the container width */
-    height: auto; /* Maintain aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
-}
-
-.controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-button {
-    background-color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: lightgray;
 }
 
 .message {
-    position: fixed; /* Fixes the position relative to the viewport */
-    top: 200px; /* Adjust to bring the message closer to the button */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
     color: white;
     font-family: Arial, sans-serif;
     font-size: 18px;
     text-align: center;
-    letter-spacing: 2px; /* Adjust the spacing between letters */
+    letter-spacing: 2px;
     margin-bottom: 10px; /* Space below the message */
-    z-index: 2; /* Ensure it's above other elements */
+    z-index: 2;
+    /* Adjust vertical position using margin-top instead of fixed positioning */
+    margin-top: 20px; /* Adjust to move the message closer to the button */
 }
 
 .click-box {
@@ -69,8 +27,8 @@ button:hover {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    z-index: 3; /* Ensure it's above the message */
-    margin-top: 10px; /* Reduce the space above the button */
+    z-index: 3;
+    margin-top: 10px; /* Space between button and message */
     box-shadow: 0 0 30px rgba(255, 149, 68, 0.5); /* Shadow effect */
 }
 
@@ -89,6 +47,24 @@ button:hover {
 
 .click-box:hover {
     transform: scale(1.1);
+}
+
+#video-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%; /* Adjust as needed */
+    max-width: 800px; /* Optional */
+    height: auto;
+    z-index: 1;
+}
+
+video {
+    width: 100%; /* Fill the container width */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 
 #confetti-container {
@@ -120,9 +96,9 @@ button:hover {
 /* Responsive Design for Mobile Devices */
 @media (max-width: 600px) {
     .message {
-        top: 120px; /* Bring the message closer to the button on smaller screens */
         font-size: 16px; /* Adjust font size */
         letter-spacing: 1px; /* Adjust letter spacing */
+        margin-top: 10px; /* Reduce margin to bring the message closer to the button */
     }
 
     .click-box {
