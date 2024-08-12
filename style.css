@@ -2,6 +2,7 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     justify-content: center;
     align-items: center;
     background-color: black;
@@ -15,8 +16,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 25%; /* Adjust to make the video smaller */
-    max-width: 800px; /* Optional: Limit the maximum width */
+    width: 25%; /* Adjust as needed */
+    max-width: 800px; /* Optional */
     height: auto;
     z-index: 1;
 }
@@ -24,9 +25,40 @@ body {
 video {
     width: 100%; /* Fill the container width */
     height: auto; /* Maintain aspect ratio */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+.message {
+    position: fixed; /* Fixes the position relative to the viewport */
+    top: 300px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 10px; /* Adjust the spacing between letters */
+}
 .click-box {
     background-color: white;
     padding: 30px;
@@ -35,6 +67,8 @@ video {
     cursor: pointer;
     transition: transform 0.3s ease;
     z-index: 2;
+    margin-top: 150px; /* Push the button down */
+
 }
 
 .click-box:active {
@@ -84,6 +118,7 @@ video {
 @media (max-width: 600px) {
     .click-box {
         padding: 15px;
+        margin-top: 10px; /* Adjust margin for smaller screens */
     }
 
     .click-box h1 {
